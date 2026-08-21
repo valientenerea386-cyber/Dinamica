@@ -10,7 +10,7 @@
     <header>
         <div class="header-contenido">
             <div class="logo">
-                <span>🎓</span> Registro de Alumnos
+                Registro de Alumnos
             </div>
             <nav>
                 <ul>
