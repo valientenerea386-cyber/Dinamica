@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primario: #1a365d;
+    --color-secundario: #2b6cb0;
+    --color-acento: #ed8936;
+    --color-exito: #38a169;
+    --color-error: #e53e3e;
+    --color-fondo: #f7fafc;
+    --color-texto: #2d3748;
+    --color-borde: #e2e8f0;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --radio: 8px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+    color: white;
+    padding: 1rem 0;
+    box-shadow: var(--sombra);
+}
+
+.header-contenido {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo span {
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radio);
+    transition: background 0.2s;
+    font-weight: 500;
+}
+
+nav a:hover,
+nav a.activo {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+main {
+    flex: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.titulo-pagina {
+    margin-bottom: 1.5rem;
+    color: var(--color-primario);
+    border-bottom: 3px solid var(--color-acento);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.mensaje {
+    padding: 1rem 1.25rem;
+    border-radius: var(--radio);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.mensaje-exito {
+    background: #c6f6d5;
+    color: #22543d;
+    border-left: 5px solid var(--color-exito);
+}
+
+.mensaje-error {
+    background: #fed7d7;
+    color: #742a2a;
+    border-left: 5px solid var(--color-error);
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    background: white;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+th, td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+th {
+    background: var(--color-primario);
+    color: white;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+tr:hover {
+    background: #edf2f7;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.badge-activo {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.badge-inactivo {
+    background: #feebc8;
+    color: #7b341e;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.55rem 1.1rem;
+    border: none;
+    border-radius: var(--radio);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.btn-primario {
+    background: var(--color-secundario);
+    color: white;
+}
+
+.btn-primario:hover {
+    background: var(--color-primario);
+}
+
+.btn-exito {
+    background: var(--color-exito);
+    color: white;
+}
+
+.btn-exito:hover {
+    background: #2f855a;
+}
+
+.btn-peligro {
+    background: var(--color-error);
+    color: white;
+}
+
+.btn-peligro:hover {
+    background: #c53030;
+}
+
+.btn-secundario {
+    background: #edf2f7;
+    color: var(--color-texto);
+}
+
+.btn-secundario:hover {
+    background: #e2e8f0;
+}
+
+.btn-sm {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.85rem;
+}
+
+.acciones {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+/* ----- Formularios ----- */
+.formulario {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    max-width: 650px;
+}
+
+.grupo-form {
+    margin-bottom: 1.25rem;
+}
+
+.grupo-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: var(--color-primario);
+}
+
+.grupo-form .requerido::after {
+    content: " *";
+    color: var(--color-error);
+}
+
+.grupo-form input,
+.grupo-form select,
+.grupo-form textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.grupo-form input:focus,
+.grupo-form select:focus,
+.grupo-form textarea:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.2);
+}
+
+.grupo-form .ayuda {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-top: 0.3rem;
+}
+
+.botones-form {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* ----- Cards de resumen ----- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 1.25rem;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.card .numero {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-secundario);
+}
+
+.card .etiqueta {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+/* ----- Footer ----- */
+footer {
+    background: var(--color-primario);
+    color: white;
+    text-align: center;
+    padding: 1.25rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+    .header-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    main {
+        margin: 1.25rem auto;
+    }
+
+    .formulario {
+        padding: 1.5rem;
+    }
+
+    th, td {
+        padding: 0.7rem 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .acciones {
+        flex-direction: column;
+    }
+
+    .acciones .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    nav a {
+        padding: 0.4rem 0.7rem;
+        font-size: 0.9rem;
+    }
+}
