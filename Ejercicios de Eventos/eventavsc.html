@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ejercicio1</title>
+  <link rel="stylesheet" href="estilosE.css">
+   <script src="event.js" defer></script>
+  
+  </head>
+  <body>
+<button id="btn">"Saludar"</button>
+    <p id="mensaje"></p>
+
+    <script>
+const btn = document.querySelector("#btn");
+const mensaje = document.querySelector("#mensaje");
+
+    btn.addEventListener("click", () => { 
+      mensaje.textContent = "Hola!";
+    });
+        </script>
+
+    <h1 id="contador">0</h1>
+<button id="reset">reset</button>
+
+<script>
+const contador = document.getElementById("contador");
+const bts = document.getElementById("bts");
+const reset = document.getElementById("reset");
+
+let numero = 0;
+
+btn.addEventListener("click" , () => {
+    numero = numero +1; 
+      contador.textContent = numero;
+      });
+reset.addEventListener("click" , () => {
+    numero = 0; 
+      contador.textContent = numero;
+      });
+
+</script>
+
+
+
+<h1 id="titulo">hola mundo</h1>
+<script>
+  const titulo = document.getElementById("titulo");
+  titulo.addEventListener("dbclick" , () => {
+    titulo.textContent = titulo.textContent.toUpperCase()
+  });
+
+
+</script>
+
+  <div id="tarjeta">pasa el muose</div>
+
+  <script>
+    const tarjeta = document.getElementById("tarjeta");
+      tarjeta.addEventListener("mouseenter" , () => {
+      tarjeta.style.backgroundColor = "lightblue";
+      tarjeta.textContent = "pasaste por encima mio";
+      });
+  </script>
+
+<input type="text" id="texto" placeholder="escribi algo">
+<p id="resultado"></p>
+
+<script>
+  const texto = document.getElementById("texto");
+  const resultado = document.getElementById("resultado");
+
+  texto.addEventListener("input" , (e) => {
+      resultado.textContent = e.target.value;
+      });
+</script>
+
+<p id="tecla">apretaste una tecla</p>
+<script>
+  const tecla = document.getElementById("tecla");
+  document.addEventListener("keydown" , (e) => {
+    if(e.key){
+      tecla.textContent = "apretaste: "+ e.key;
+    }
+      });
+</script>
+
+<div id="caja"></div>
+
+<script>
+  const caja = document.getElementById("caja");
+   caja.addEventListener("mouseenter" , () => {
+      caja.textContent = "adentro";
+      caja.classList.add = ("resaltada");
+    });
+     caja.addEventListener("mouseleave" , () => {
+      caja.textContent = "afuera";
+      caja.classList.add = ("resaltada");
+    });
+</script>
+
+<label for="color">Elegir un color: </label>
+<select id="color">
+  <option value="" >Elegi...</option>
+   <option value="red" >rojo</option>
+    <option value="green" >Verde</option>
+     <option value="blue" >Azul</option>
+      <option value="yellow" >Amarillo</option>
+</select>
+<div id="cuadrado"></div>
+<button id="quitar">quitar color</button>
+
+<script>
+const color = document.getElementById("color");
+const cuadrado = document.getElementById("cuadrado");
+const quitar = document.getElementById("quitar");
+
+color.addEventListener("change", (e) => {
+  cuadrado.style.background = e.target.value;
+});
+
+quitar.addEventListener("click", () => {
+  cuadrado.style.background = "white";
+ color.selectedIndex = 0;
+});</script>
+
+  </body>
+</html>
